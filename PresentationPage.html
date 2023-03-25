@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Presentation Page</title>
+
+    <script>
+        var seconds=0;
+        function displayseconds()
+        {
+            seconds +=1;
+            document.getElementById("secondsdisplay").innerText="This Page Will Be Redirect In "+seconds+" Seconds ...";
+        }
+        setInterval(displayseconds,1000);
+
+        function redirectpage()
+        {
+            window.location="HomePage.html";
+        }
+        setTimeout('redirectpage()',4000);
+    </script>
+    <style>
+        body{
+            background-image: url(img/1410099.jpg);
+        }
+        h1{
+            color: rgb(72, 255, 0);
+            text-align: center;
+        }
+        p{
+            color: white;
+            padding-top: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        img{
+            float: right;
+            margin: 50px;
+            border-radius: 50%;
+            height: 312px; 
+            width: 250px;
+
+        }
+
+        h2 {
+            float: right;
+            color: white;
+            margin: 10px 57px;
+        }
+
+        #secondsdisplay{
+            color: white;
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>MAVS FOOTBALL</h1>
+    <p>You will be redirected to the Official site of MAVS Football in 5 seconds</p>
+    <hr>
+    <div class="align">
+        <img src="Vindiya.jpg" alt="Vindiya" >
+        <img src="Sandalu.jpg" alt="Sandalu" >
+        <img src="Minidu.jpg" alt="Minidu" >
+        <img src="Adeesha.jpg" alt="Adeesha">
+    </div>
+    
+        <h2>Vindiya Wickramathunga</h2>
+        <h2>Sandalu De Silva</h2>
+        <h2>Minidu Nimna Narangoda</h2>
+        <h2>Adeesha Gunawardana</h2>
+    </div>
+    <hr/>
+    <div id="secondsdisplay"></div>
+</body>
+</html>

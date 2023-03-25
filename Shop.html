@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <div class="cart__counter">
+          <i class="fa fa-shopping-cart"></i><span id="total__counter">0</span>
+        </div>
+        <div class="cart">
+          <div class="cart__items">
+              <div class="check_out" onclick = "window.location.href ='checkout.html';"><h4>Total Amount : $</h4><h4 class="total__cost">0</h4><button class="btn check_out_btn">Checkout</button> </div>
+          </div>
+      </div>
+      </section>
+
+      <div class="products">
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="1" />
+          <img src="./img/boot-2.2.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Nike Phantom Vision Pro 2</h4>
+          <br>
+          <br>
+          <p>The Phantom Vision 2 Pro DF DG brings a game-changing level of fierce precision to the field.</p>
+          <br>
+          <br>
+          <h5 class="product__price">$150</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="2" />
+          <img src="./img/boot-1.1.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Adidas Ace 17.3 FG</h4>
+          <br>
+          <br>
+          <p>Textile and Synthetic, Imported, Synthetic sole, Shaft measures approximately low-top" from arch, Two-tone knit mesh upper for breathability.</p>
+          <h5 class="product__price">$50</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="3" />
+          <img src="./img/ball-1.3.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Millenti Youth Soccer Ball</h4>
+          <br>
+          <br>
+          <p>STAND OUT OR RISK BEING LEFT OUT At last a brand focused exclusively on functional design match-quality balls at training ball prices</p>
+          <h5 class="product__price">$22.99</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="4" />
+          <img src="./img/ball-2.1.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Puma Team Final 21.3 MS</h4>
+          <br>
+          <br>
+          <p>High level training or match quality ball with high performance criteria. The Textured PU cover further improves the flight characteristics and also increases shooting speed.</p>
+          <h5 class="product__price">$29.44</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="5" />
+          <img src="./img/ball-3.3.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Nike Street Akka</h4>
+          <br>
+          <br>
+          <p>The Nike Street Akka Football is built for street football.It's smaller and heavier—making it perfect for working on your outdoor game.</p>
+          <br>
+          <h5 class="product__price">$30.25</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="6" />
+          <img src="./img/n1.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">FC Barcelona || 2022 Home Kit</h4>
+          <br>
+          <br>
+          <p>F.C. Barcelona 2021/22 Stadium Home Men's Football Shirt - Blue</p>
+          <br>
+          <br>
+          <br>
+          <h5 class="product__price">$64.55</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="7" />
+          <img src="./img/n3.3.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">PSG || 2022 Home Kit</h4>
+          <br>
+          <br>
+          <p>Two brands synonymous with taking skill and winning to the next level combine once again with this PSG Jordan Stadium Shirt.</p>
+          <br>
+          <h5 class="product__price">$99.55</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="8" />
+          <img src="./img/n4.1.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">PSG || 2022 Away Kit</h4>
+          <br>
+          <br>
+          <p>Get kitted out like your favourite players. As worn by the first team on matchdays, this short sleeve shirt is the perfect way to show your pride and passion.</p>
+          <h5 class="product__price">$99.55</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+        <div class="product__element">
+          <input type="hidden" name="" id="product__id" value="9" />
+          <img src="./img/n10.jpg" alt="" id="image" />
+          <br>
+          <br>
+          <h4 class="product__name">Man-Utd Home Shirt 2021-22</h4>
+          <br>
+          <br>
+          <p>Youth. Courage. Success. The three pillars of Manchester United's motto have brought the club more than a century of triumphs. With its clean red design and white ribbed crewneck</p>
+          <h5 class="product__price">$52.75</h5>
+          <div class="btn__add__to__cart">Add To Cart</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="feature">
+      <div class="pop-kits-1">
+        <figure>
+            <img
+                src="img/boot-4.1.jpg" alt=""
+            />
+        </figure>
+        <div>
+            <h5>Puma Spirit II FG</h5>
+            <br>
+            <br>
+            <p>
+                Part of the PUMA Spirit II range, these football boots suit firm natural surfaces and are designed for longevity, thanks to the durable synthetic upper. The supple lining adapts to your foot and ensures comfort with each and every step, while the thermoplastic polyurethane outsole with conical studs supplies instant connection between boot and ground.
+            </p>
+            <h6>$39.35</h6>
+        </div>
+    </div>
+    </section>
+
+    <footer>
+      <div class="foter" onclick="window.location.href='pageeditorVindiya.html';">
+        <h3>Page Editor</h3>
+        <a href="AdditionalPage.html">Additional Contant Page</a>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+
+    <div class="nav">
+    <ul>
+      <li class="link6"><a href="StudentPage.html">Our Team</a></li>
+      <li class="link5"><a href="AdditionalPage.html">More Info</a></li>
+      <li class="link4"><a href="Query.html">Query</a></li>
+      <li class="link3"><a href="Shop.html">Shop</a></li> 
+      <li class="link2"><a href="Gallery.html">Gallery</a></li>
+      <li class="link7"><a href="SiteMap.html">Site Map</a></li>
+      <li class="link1"><a href="QuizPage.html">Quiz</a></li> 
+      <li class="home"><a href="index.html">Home</a></li>
+    </ul>
+    <div class="shade">
+      <ul>
+      <li><a href="https://twitter.com"><img src="twitter.png" alt="logo" class="icon"></a>
+      </li>
+      <li><a href="https://www.facebook.com"><img src="facebook.png" alt="logo" class="icon">
+      </a></li>
+      <li><a href="https://www.instagram.com"><img src="insta.png" alt="logo" class="icon"></a>
+      </li>
+      <li><h3>Follow Us : </h3></li>  
+    </ul>
+    </div>
+    <div class="logo"><img src="LogoBlack.jpg" alt="logo">
+    </div>
+  </div>
+
+</body>
+</html>
