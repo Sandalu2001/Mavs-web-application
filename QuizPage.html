@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		
+		body{
+		background-image: url("w10.jpeg");
+		background-attachment: fixed;
+		background-position: center;
+		}
+		
+		.intro{
+			text-align:center;
+			background-color:black;
+			color:white;
+			font-size:20px;
+			padding:50px;	
+		}
+				
+		#startBtn,#endBtn,#redoBtn{
+			border: none;
+			cursor: pointer;
+			font-size:25px;
+			padding:20px;
+			padding-right:30px;
+			padding-left:30px;
+			border-radius:5px;
+			background-color:#18ab44;
+			color:#ffffff;
+		}
+		
+		#bottomBtn{
+			position:fixed;
+			border: none;
+			cursor: pointer;
+			background-color:#18ab44;
+			color:#ffffff;
+			border-radius:5px;
+			padding:10px;
+			padding-left:20px:
+			padding-right:20px;
+			top:660px;
+			left:95%;
+			font-size:18px;
+		}
+		
+		#bottomBtn:hover{
+			background-color:#158a34;
+		}
+		
+		#startBtn{
+			margin-left:44%;
+		}
+		
+		#startBtn:hover{
+			background-color:#158a34;
+		}
+		
+		.quiz{
+			text-align:center;
+			margin-left:200px;
+			margin-right:200px;
+		}
+		
+		#head{
+			display:none;
+			color:white;
+			background-color:black;
+			padding:20px;
+			border-radius:10px;
+			margin-bottom:0px;
+			font-size:25px;
+		}
+		
+		#questions{
+			display:none;
+			background-color:rgba(0,0,0,0.8);
+			color:white;
+			font-size:20px;
+		}
+		
+		p{
+			font-size:28px;
+		}
+		
+		#timeRemaining{
+			display:none;
+			position:fixed;
+			top:250px;
+			font-size:16px;
+			text-align:center;
+			color:white;
+			background-color:#18ab44;
+			padding:10px;
+			padding-top:15px;
+			padding-bottom:15px;
+			margin-left:88%;
+			border-radius:5px;	
+		}
+		
+		input[type=radio]{
+			width:25px;
+			height:25px;
+		}
+		
+		#Q10,#Q9,#Q8,#Q7,#Q6,#Q5,#Q4,#Q3,#Q2,#Q1{
+			text-align:left;
+			font-size:28px;
+			margin-left:43%;
+		}
+		
+		#summary{
+			display:none;
+			text-align:center;
+			font-size:25px;
+			margin-left:200px;
+			margin-right:200px;
+			background-color: rgba(0,0,0,0.5);
+			color:white;
+			border-radius:10px;
+		}
+		
+		#marks{
+			padding:40px;
+			padding-top:100px;
+			padding-bottom:125px;
+			border-radius:10px;
+			font-size:25px;
+		}
+		
+		#score{
+			box-shadow:1px 4px 8px 2px rgba(0, 0, 0, 0.5);
+			padding:25px;
+			margin-right:30%;
+			margin-left:30%;
+		}
+		
+		.feedback{
+			background-color: rgba(0,0,0,1);
+			padding:40px;
+			margin-bottom:40px;
+			margin-left:50px;
+			margin-right:50px;
+			border-radius:15px;
+			font-size:25px;
+		}
+		
+		#btnDiv{
+			display:none;
+		}
+		
+		#endBtn{
+			margin-bottom:60px;
+			margin-top:60px;
+			margin-right:10%;
+		}
+		
+		#redoBtn{
+			margin-bottom:60px;
+			margin-top:60px;
+			margin-left:10%;
+		}
+		
+		#endBtn:hover,#redoBtn:hover{
+			background-color:#158a34;
+		}
+		
+		#pageDev{
+			position:satatic;
+			top:660px;
+			font-size:16px;
+		}
+		
+		.pdLink{
+			text-decoration:none;
+			background-color:#18ab44;
+			color:#000000;
+			padding:10px;
+			border-radius:5px;
+		}
+		
+		.pdLink:hover{
+			background-color:#18ab44;
+			color:#ffffff;
+		}
+		
+		.link1 a{
+			border-bottom:5px solid #4BF983;
+		}
+		
+		html{
+			scroll-behavior:smooth;
+		}
+		
+	</style>
+	
+<body>
+	
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br>
+	<div class="intro">
+		<h2>Football Quiz</h2>
+		This is a simple multiple-choice quiz we made relevant to football. If you are a football fan you should definietly participate in this quiz. 
+		<br>Get some knowledge about football history and legendary players of the sport.<br> When you hit the "Start" button you will have 1 minute to answer the 10 questions.<br>
+		Every correct answers get 2 points and every incorrect or not answered questions deduct 1 point.
+	</div><br><br>
+	
+	<a href="#head"><button id="startBtn">Start Quiz</button></a><br><br><br>
+	<a href="#pageDev"><button id="bottomBtn"><img src="white-down-arrow.png" alt="arrow down icon" width="14px" height="12px"></button></a>
+	<div id="timeRemaining">
+	</div>
+	<br>
+	<div class="quiz">
+		
+		<div id="head">
+			<h2>Quiz Questions</h2>
+		</div>
+		<div id="questions">
+			
+			<form name="footballQuiz">
+			<p><br><b>Question 1<br><br>
+			Which country won the first World Cup in 1930?<br><br></b>
+			<div id="Q1">
+			<input type="radio" name="q1" value="a11"> Brazil<br><br>
+			<input type="radio" name="q1" value="a12"> Argentina<br><br>
+			<input type="radio" name="q1" value="a13"> Uruguay<br><br>
+			<input type="radio" name="q1" value="a14"> Belgium<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 2<br><br>
+			Which year Portugal won the European Championship <br>while Ronaldo as the captain?<br><br></b>
+			<div id="Q2">
+			<input type="radio" name="q2" value="a21"> 2012<br><br>
+			<input type="radio" name="q2" value="a22"> 2018<br><br>
+			<input type="radio" name="q2" value="a23"> 2019<br><br>
+			<input type="radio" name="q2" value="a24"> 2016<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 3<br><br>
+			How many Ballon d'Or awards Messi has won?<br><br></b>
+			<div id="Q3">
+			<input type="radio" name="q3" value="a31"> 6<br><br>
+			<input type="radio" name="q3" value="a32"> 8<br><br>
+			<input type="radio" name="q3" value="a33"> 5<br><br>
+			<input type="radio" name="q3" value="a34"> 4<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 4<br><br>
+			Which club has won the most Champions League titles?<br><br></b>
+			<div id="Q4">
+			<input type="radio" name="q4" value="a41"> Real Madrid<br><br>
+			<input type="radio" name="q4" value="a42"> FC Barcelona<br><br>
+			<input type="radio" name="q4" value="a43"> Manchester United<br><br>
+			<input type="radio" name="q4" value="a44"> Chelsea<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 5<br><br>
+			Which country has won the most World Cups?<br><br></b>
+			<div id="Q5">
+			<input type="radio" name="q5" value="a51"> Argentina<br><br>
+			<input type="radio" name="q5" value="a52"> Brazil<br><br>
+			<input type="radio" name="q5" value="a53"> Germany<br><br>
+			<input type="radio" name="q5" value="a54"> France<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 6<br><br>
+			Who is the Champions League's top goalscorer of all time?<br><br></b>
+			<div id="Q6">
+			<input type="radio" name="q6" value="a61"> Lionel Messi <br><br>
+			<input type="radio" name="q6" value="a62"> Cristiano Ronaldo<br><br>
+			<input type="radio" name="q6" value="a63"> Neymar <br><br>
+			<input type="radio" name="q6" value="a64"> Robert Lewandowski<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 7<br><br>
+			Which team won the first Premier League title?<br><br></b>
+			<div id="Q7">
+			<input type="radio" name="q7" value="a71"> Manchester United<br><br>
+			<input type="radio" name="q7" value="a72"> Juventus<br><br>
+			<input type="radio" name="q7" value="a73"> Manchester City<br><br>
+			<input type="radio" name="q7" value="a74"> Arsenal<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 8<br><br>
+			Which Ballon d'Or-winning footballer had a galaxy<br> named after them in 2015?<br><br></b>
+			<div id="Q8">
+			<input type="radio" name="q8" value="a81"> Luka Modric<br><br>
+			<input type="radio" name="q8" value="a82"> Lionel Messi<br><br>
+			<input type="radio" name="q8" value="a83"> Cristiano Ronaldo<br><br>
+			<input type="radio" name="q8" value="a84"> Ronaldinho<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 9<br><br>
+			In which world cup did Diego Maradona score his "Hand of God" goal?<br><br></b>
+			<div id="Q9">
+			<input type="radio" name="q9" value="a91"> 1994<br><br>
+			<input type="radio" name="q9" value="a92"> 1982<br><br>
+			<input type="radio" name="q9" value="a93"> 1990<br><br>
+			<input type="radio" name="q9" value="a94"> 1986<br><br>
+			</div></p><hr>
+			
+			<p><br><b>Question 10<br><br>
+			The 2026 Wolrd Cup will be hosted across three different countries.<br> One of them is? <br><br></b>
+			<div id="Q10">
+			<input type="radio" name="q10" value="a101"> Italy<br><br>
+			<input type="radio" name="q10" value="a102"> UAE<br><br>
+			<input type="radio" name="q10" value="a103"> United States<br><br>
+			<input type="radio" name="q10" value="a104"> France<br><br>
+			</div></p><hr>
+			</form>
+						
+		</div>
+		<div id="btnDiv">
+				<a href="#summary"><button id="endBtn">Get Marks</button></a>
+				<a href="#head"><button id="redoBtn">Try Again</button></a>
+		</div>
+	</div>	
+	
+		<div id="summary">
+			<div id="marks">
+				<b><div id="greet">
+				</div></b>
+				<br>
+				<strong><div id="score">
+				</div></strong><br><br>
+				<div id="timeDisplay">
+				</div>
+			</div><br><br>
+			
+			<div id="results">
+				<p class="feedback"><strong>Question 1</strong><br><br>
+				<span id="answer01"></span></p>
+				
+				<p class="feedback"><strong>Question 2</strong><br><br>
+				<span id="answer02"></span></p>
+				
+				<p class="feedback"><strong>Question 3</strong><br><br>
+				<span id="answer03"></span></p>
+				
+				<p class="feedback"><strong>Question 4</strong><br><br>
+				<span id="answer04"></span></p>
+				
+				<p class="feedback"><strong>Question 5</strong><br><br>
+				<span id="answer05"></span></p>
+				
+				<p class="feedback"><strong>Question 6</strong><br><br>
+				<span id="answer06"></span></p>
+				
+				<p class="feedback"><strong>Question 7</strong><br><br>
+				<span id="answer07"></span></p>
+				
+				<p class="feedback"><strong>Question 8</strong><br><br>
+				<span id="answer08"></span>
+				
+				<p class="feedback"><strong>Question 9</strong><br><br>
+				<span id="answer09"></span></p>
+				
+				<p class="feedback"><strong>Question 10</strong><br><br>
+				<span id="answer10"></span></p><br>
+			</div>
+		</div>
+		<br><br>
+		
+	<p id="pageDev">
+	Link to the page developer :- <a href="PageDeveloperNimna.html" class="pdLink">Page Developer</a>
+	</p><br>
+
+	<div class="nav">
+		<ul>
+			<li class="link6"><a href="StudentPage.html">Our Team</a></li>
+			<li class="link5"><a href="AdditionalPage.html">More Info</a></li>
+			<li class="link4"><a href="Query.html">Query</a></li>
+			<li class="link3"><a href="Shop.html">Shop</a></li>	
+			<li class="link2"><a href="Gallery.html">Gallery</a></li>
+			<li class="link7"><a href="SiteMap.html">Site Map</a></li>
+			<li class="link1"><a href="QuizPage.html">Quiz</a></li>	
+			<li class="home"><a href="index.html">Home</a></li>
+		</ul>
+		<div class="shade">
+			<ul>
+			<li><a href="https://twitter.com"><img src="twitter.png" alt="logo" class="icon"></a>
+			</li>
+			<li><a href="https://www.facebook.com"><img src="facebook.png" alt="logo" class="icon">
+			</a></li>
+			<li><a href="https://www.instagram.com"><img src="insta.png" alt="logo" class="icon"></a>
+			</li>
+			<li><h3>Follow Us : </h3></li>	
+		</ul>
+		</div>
+		<div class="logo"><img src="LogoBlack.jpg" alt="logo">
+		</div>
+	</div>
+	
+	
+
+	
+	<script>
+		
+		//Start Quiz Button
+		document.getElementById("startBtn").addEventListener("click",function(){
+			document.getElementById("questions").style.display = "block";
+			document.getElementById("btnDiv").style.display = "block";
+			document.getElementById("timeRemaining").style.display = "block";
+			document.getElementById("head").style.display = "block";
+			document.getElementById("questions").style.pointerEvents= "auto";
+			
+			//Submit the form after	1 minute
+			submitTimer = setTimeout(function(){
+				document.getElementById("endBtn").click();
+			},61000);
+			
+			//Display the time left after starting the quiz
+			var timeLeft = 60;
+			countdownTimer = setInterval(function(){
+				document.getElementById("timeRemaining").innerHTML = timeLeft + " seconds remaining";
+				timeLeft -= 1;
+				 if(timeLeft <= 0){
+					clearInterval(countdownTimer);
+					document.getElementById("timeRemaining").innerHTML = "Time is up!";
+					}
+				var timeSpend = 60 - timeLeft;
+				document.getElementById("timeDisplay").innerHTML = "Completed the quiz in " + timeSpend + " seconds";
+			},1000);
+				
+		})
+		
+		//Get Marks Button
+		document.getElementById("endBtn").addEventListener("click",function(){
+			document.getElementById("summary").style.display = "block";
+			document.getElementById("timeRemaining").style.display = "none";
+			clearTimeout(submitTimer);
+			clearInterval(countdownTimer);		
+			
+			//Validating the answers and calculating marks
+			var score = -10;
+			let q1RadioChecked = getRadioValue(footballQuiz.q1)
+				if(q1RadioChecked === "a13"){
+					document.getElementById("answer01").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q1RadioChecked === ""){
+					document.getElementById("answer01").innerHTML="Not answered - The answer is Uruguay";					
+				}
+				else{
+					document.getElementById("answer01").innerHTML="&cross; Incorrect - The answer is Uruguay";				
+				}
+			
+			let q2RadioChecked = getRadioValue(footballQuiz.q2)
+				if(q2RadioChecked === "a24"){
+					document.getElementById("answer02").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q2RadioChecked === ""){
+					document.getElementById("answer02").innerHTML="Not answered - The answer is 2016";					
+				}
+				else{
+					document.getElementById("answer02").innerHTML="&cross; Incorrect - The answer is 2016";				
+				}
+				
+			let q3RadioChecked = getRadioValue(footballQuiz.q3)
+				if(q3RadioChecked === "a31"){
+					document.getElementById("answer03").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q3RadioChecked === ""){
+					document.getElementById("answer03").innerHTML="Not answered - The answer is 6";				
+				}
+				else{
+					document.getElementById("answer03").innerHTML="&cross; Incorrect - The answer is 6";				
+				}
+				
+			let q4RadioChecked = getRadioValue(footballQuiz.q4)
+				if(q4RadioChecked === "a41"){
+					document.getElementById("answer04").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q4RadioChecked === ""){
+					document.getElementById("answer04").innerHTML="Not answered - The answer is Real Madrid";				
+				}
+				else{
+					document.getElementById("answer04").innerHTML="&cross; Incorrect - The answer is Real Madrid";					
+				}
+				
+			let q5RadioChecked = getRadioValue(footballQuiz.q5)
+				if(q5RadioChecked === "a52"){
+					document.getElementById("answer05").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q3RadioChecked === ""){
+					document.getElementById("answer05").innerHTML="Not answered - The answer is Brazil";					
+				}
+				else{
+					document.getElementById("answer05").innerHTML="&cross; Incorrect - The answer is Brazil";					
+				}
+				
+			let q6RadioChecked = getRadioValue(footballQuiz.q6)
+				if(q6RadioChecked === "a62"){
+					document.getElementById("answer06").innerHTML="&checkmark; Correct";
+					score = score + 3;	
+				}	
+				else if(q6RadioChecked === ""){
+					document.getElementById("answer06").innerHTML="Not answered - The answer is Cristiano Ronaldo";					
+				}
+				else{
+					document.getElementById("answer06").innerHTML="&cross; Incorrect - The answer is Cristiano Ronaldo";					
+				}
+				
+			let q7RadioChecked = getRadioValue(footballQuiz.q7)
+				if(q7RadioChecked === "a71"){
+					document.getElementById("answer07").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q7RadioChecked === ""){
+					document.getElementById("answer07").innerHTML="Not answered - The answer is Manchester United";				
+				}
+				else{
+					document.getElementById("answer07").innerHTML="&cross; Incorrect - The answer is Manchester United";		
+				}
+				
+			let q8RadioChecked = getRadioValue(footballQuiz.q8)
+				if(q8RadioChecked === "a83"){
+					document.getElementById("answer08").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q8RadioChecked === ""){
+					document.getElementById("answer08").innerHTML="Not answered - The answer is Cristiano Ronaldo";		
+				}
+				else{
+					document.getElementById("answer08").innerHTML="&cross; Incorrect - The answer is Cristiano Ronaldo";				
+				}
+				
+			let q9RadioChecked = getRadioValue(footballQuiz.q9)
+				if(q9RadioChecked === "a94"){
+					document.getElementById("answer09").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q9RadioChecked === ""){
+					document.getElementById("answer09").innerHTML="Not answered - The answer is 1986";					
+				}
+				else{
+					document.getElementById("answer09").innerHTML="&cross; Incorrect - The answer is 1986";
+				}
+				
+			let q10RadioChecked = getRadioValue(footballQuiz.q10)
+				if(q10RadioChecked === "a103"){
+					document.getElementById("answer10").innerHTML="&checkmark; Correct";
+					score = score + 3;
+				}	
+				else if(q10RadioChecked === ""){
+					document.getElementById("answer10").innerHTML="Not answered - The answer is United States";
+				}
+				else{
+					document.getElementById("answer10").innerHTML="&cross; Incorrect - The answer is United States";
+				}
+				
+			document.getElementById("score").innerHTML="Your Mark is " + score + " out of 20";
+			
+			//Changing the background color
+			if(score <= -5){
+				document.getElementById("marks").style.backgroundColor = "#b80000";//red
+				document.getElementById("greet").innerHTML= "Better luck next time !";
+			}
+			else if(score <= 0){
+				document.getElementById("marks").style.backgroundColor = "#de9800";//orange
+				document.getElementById("greet").innerHTML= "Not Bad !";
+			}
+			else if(score <= 5){
+				document.getElementById("marks").style.backgroundColor = "#abb00e";//yellow
+				document.getElementById("greet").innerHTML= "Keep it Up !";
+			}
+			else if(score <= 10){
+				document.getElementById("marks").style.backgroundColor = "purple";//purple
+				document.getElementById("greet").innerHTML= "You are Good !";
+			}
+			else if(score <= 15){
+				document.getElementById("marks").style.backgroundColor = "#03009e";//blue
+				document.getElementById("greet").innerHTML= "Excellent Work !";
+			}
+			else{
+				document.getElementById("marks").style.backgroundColor = "green";//green
+				document.getElementById("greet").innerHTML= "You are a Champion !";
+			}
+			
+			document.getElementById("questions").style.pointerEvents= "none";
+		
+		})
+		
+        //Try Again Button
+		document.getElementById("redoBtn").addEventListener("click",function(){
+			document.getElementById("startBtn").click();
+			document.getElementById("summary").style.display = "none";
+		})
+			
+		//function to get radio button inputs using an array
+		function getRadioValue(radioArray){
+			for(let i = 0; i < radioArray.length; i++){
+				if(radioArray[ i ].checked){
+					return radioArray[i].value;
+				}
+			}
+			return "";
+		}
+		
+	</script>
+	
+</body>
+</html>

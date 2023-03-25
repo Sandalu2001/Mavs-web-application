@@ -1,0 +1,303 @@
+		body{
+			background-image: url("1410099.jpg");
+			background-attachment: fixed;
+			background-position: center;
+			font-family: sans-serif;
+			margin: 0;
+			background-size: 100% 100%;
+		}
+
+		.Intro{
+			font-size: 25px;
+			text-align: center;
+			background-color: rgb(17, 17, 17,0.7);
+			margin-top: 200px;
+			margin-left: 10%;
+			margin-right: 10%;
+			padding: 40px 0px;
+			color: white;
+			overflow: hidden;
+			border: 3px solid #4BF983;
+		}
+
+		.Intro:hover{
+			transition-duration: 0.4s;
+			transform: scaleX(1.05);		
+		}
+
+		.history{
+			border-radius: 5px;
+			position: absolute;
+			margin: 20% 5% 5% 10%;
+			width: 35%;
+			top: 450px;
+
+		}
+
+		.history:hover .overlayHistory {
+			  width: 100%;
+			  left: 0;
+		}
+
+		.overlayHistory {
+			  position: absolute;
+			  bottom: 0;
+			  left: 100%;
+			  right: 0;
+			  background-color: rgba(0, 0, 0, 0.8);
+			  overflow: hidden;
+			  width: 0;
+			  height: 550px;
+			  transition: .8s ease;
+		}
+
+		.history:hover{
+			  transform: scale(1.03);
+			  transition-duration: 0.8s;
+			  border: 3px solid #4BF983;
+		}
+
+		.players{
+			position: absolute;
+			margin: 20% 10% 5% 5%;
+			width: 35%;
+			left: 50%;
+			top: 450px;
+		}
+
+		.overlayPlayers {
+  				position: absolute;
+  				bottom: 0;
+  				left: 0;
+  				right: 0;
+  				background-color: rgba(0, 0, 0, 0.8);
+  				overflow: hidden;
+  				width: 0;
+  				height: 550px;
+  				transition: .8s ease;
+		}
+
+		.players:hover .overlayPlayers {
+			width: 100%;
+			left: 0;
+		}
+
+		.players:hover{
+			  transform: scale(1.03);
+			  transition-duration: 0.8s;
+			  border: 3px solid #4BF983;
+
+
+		}
+
+		.image {
+			 display: block;
+			 width: 100%; 
+		}
+
+		.text {
+			  color: white;
+			  font-size: 18px;
+			  padding: 20px 40px 5px 40px;
+			  white-space: normal;
+			  
+		}
+
+		.title{
+			border-top: 3px solid #4BF983;
+			color: white;
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.8);
+			top: 0;
+			margin: 0;
+			padding: 50px 0px;
+		}
+
+		.worldCup {
+			  position: absolute;
+			  width: 80%;
+			  top: 1750px;
+			  margin: 7% 10% 5% 10%;
+		}
+
+		.overlayWorldCup {
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  left: 0;
+			  height: 100%;
+			  float: right;
+			  width: 50%;
+			  opacity: 0;
+			  transition: .8s ease;
+			  background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.worldCup:hover .overlayWorldCup {
+			  opacity: 1;
+		}
+
+		.worldCup:hover{
+			border: 3px solid #4BF983;
+			transform: scale(1.02);
+			transition-duration: 0.8s;
+		}
+
+		.quote{
+			position: absolute;
+			top: 1400px;
+			width: 80%;
+			margin: 10% 10% 5% 10%;
+			font-size: 30px;
+			text-align: center;
+			background-color: rgb(17, 17, 17,0.7);
+			padding: 35px 0px;
+			color: white;
+			overflow: hidden;
+			border: 3px solid #4BF983;
+		}
+
+		.clubs{
+			position: absolute;
+			top: 2400px;
+			width: 80%;
+			margin: 10% 10% 15% 10%;
+			height: 300px;
+			padding: 0;
+			background-color: rgb(17, 17, 17);
+		}
+
+		.clubs img{
+			float: left;
+			margin: 0px 40px 0px 0px;
+		}
+
+		.clubs:hover{
+			border: 3px solid #4BF983;
+			transform: scale(1.02);
+			transition-duration: 0.8s;
+		}
+
+		.mainBtn{
+			border: none;
+			font-size: 20px;
+			text-align: right;
+			font-weight: bold;
+			padding: 10px 30px;
+			background-color: #4BF983;
+			border-radius: 8px;
+			position: absolute;
+			text-decoration: none;
+			color: black;
+			bottom: 15px;
+			left: 300px;
+			white-space: nowrap;
+		}
+
+		#worldCupbtn{
+			left: 355px;
+
+		}
+
+		#clubbtn{
+			left: 950px;
+		}
+
+		.mainBtn:hover{
+			transition-duration: 0.5s;
+			background-color: black;
+			color:#4BF983;
+		}
+
+
+		#clubText{
+			color: white;
+			font-size: 18px;
+			padding: 20px 40px;
+		}
+
+		.bottom ul{
+			position: absolute;
+			background-color:rgba(17, 17, 17, 1.0);
+		  	top: 2950px;
+		  	height: 180px;
+		  	margin: 0;		  
+		  	display: block;	
+		  	overflow:hidden;
+		  	width: 99.5%;
+		  	left: 0;
+		 }
+
+	    .bottom li a{
+			padding: 0px 25px;
+			margin: 30px 20px 0px 0px;
+			border: none;
+		}
+
+	    .bottom li {
+			float: right;
+			list-style-type: none;
+			margin-right: 15px;
+	    }
+
+	    .bottom h3{
+			color: rgb(255, 255, 255);
+			padding:15px 25px;
+			margin: 0px 20px 0px 0px;
+	    }
+
+		.icon:hover{
+			transform: scale(1.2);
+			transition-duration: 0.4s;
+		}
+
+	    .bottom img{
+		height: 120px;
+		width: 105px;
+		border-radius: 50%;
+	    }
+
+	    .bottom h3{
+		margin-top: 65px;
+	    }
+
+	    #logo img{
+		width: 300px;
+		height: 140px;
+	    }
+		
+		#bottomBtn{
+		position:fixed;
+		border: none;
+		cursor: pointer;
+		background-color:#18ab44;
+		border-radius:5px;
+		padding:5px;
+		margin-left:20px;
+		margin-top:10px;
+		}
+		
+		#bottomBtn:hover{
+		background-color:#158a34;
+		}
+		
+		#down{
+		width:20px;
+		height:16px;
+		}
+		
+		#footer{
+		position:absolute;
+		top:2980px;
+		left:2%;
+		color:white;
+		}
+		
+		#ftrLink{
+		text-decoration:none;
+		color:green;
+		}
+		
+		#ftrLink:hover{
+		color:#0f6901;
+		}
