@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="Query.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Query Form</title>
+
+	<script>
+
+
+		function TelephoneValidation(frm){
+			let tel=frm.TelephoneNumber.value;
+
+			if((isNaN(tel) || tel.length!=10) || (tel.charAt(0)!=0)){
+				return true;
+			}
+			else{
+				return false;
+			}	
+		}
+
+		function MailValidation(frm){   
+			let mail=frm.Email.value;
+			if(mail.includes("@") && mail.includes(".")){
+				let atPos=mail.indexOf("@"); 
+				let dotPos=mail.lastIndexOf(".");
+
+				if(atPos<dotPos){
+						return false;
+				}
+				else{
+					return true;
+				}
+			}
+			else{
+				return true;
+			}
+		}
+
+		
+
+	
+		function getSummary(frm){
+			let firstname=frm.FirstName.value;
+			let lastname=frm.LastName.value;
+			let fmail=frm.Email.value;
+			let ftel=frm.TelephoneNumber.value;
+			let subject=frm.Subject.value;
+			let details=frm.Message.value;
+
+
+			if(firstname==""){
+				alert("First name must be filled out.")
+			}
+			else if(lastname==""){
+				alert("Last name must be filled out.")
+			}
+			else if(fmail==""){
+				alert("Email must be filled out.")
+			}
+			else if(MailValidation(frm)){
+				alert("Email is not valid")
+			}
+			else if(ftel==""){
+				alert("Telephone number must be filled out.")
+			}
+			else if(TelephoneValidation(frm)){
+				alert("Telephone number is not valid")
+			}
+			else if(subject=="Insert"){
+				alert("Subject must be selected.")
+			}
+			else if(details==""){
+				alert("Message must be filled out.")
+			}
+			else{
+				DisappearTheForm();	
+
+				document.getElementById("id1").innerHTML="Name &emsp; &emsp; :&nbsp;"+firstname+ " "+lastname;
+				document.getElementById("id2").innerHTML="Email &emsp; &emsp; :&nbsp;"+fmail;
+				document.getElementById("id3").innerHTML="Telephone :&nbsp;"+ftel;
+				document.getElementById("id4").innerHTML="Subject &emsp; &emsp; :&nbsp;"+subject;
+				document.getElementById("id5").innerHTML="Message &emsp; &emsp; :&nbsp;"+details;
+			}
+		}
+
+		function AppearTheForm(){
+			document.getElementById("summary").style.display="none";
+			document.getElementById("element").style.display = "block";
+		}
+
+		function DisappearTheForm(){
+			document.getElementById("summary").style.display="block";
+			document.getElementById("element").style.display = "none";	
+		}
+
+	</script>
+</head>
+<body>
+	<form action="mailto:sandalusankaja2001@gmail.com" method="post" enctype="text/plain" name="query" onsubmit="AppearTheForm()">
+	
+	<div id="element">				
+		<div class="topic">
+			<h1>GET IN TOUCH</h1>
+			<h2>Have any questions or suggestions Drop us a message.</h2>
+		</div>
+		<div class="content">
+				<div id="name">	
+					<h2 class="name">Name</h2>
+					<input type="text" name="FirstName" id="FirstName" class="hover" placeholder="First Name" ><br>
+					<label class="firstlabel" for="FirstName">FirstName</label>
+					
+					<input type="text" name="LastName" id="LastName" class="hover" placeholder="Last Name"><br>
+					<label class="lastlabel" for="LastName">LastName</label>	
+				</div>
+
+				<div id="mail">
+					<h2 class="name">Mail</h2>
+					<input type="email" name="Email" id="Email" class="hover" placeholder="Email" ><br>		
+				</div>
+
+				<div id="telephone">
+					<h2 class="name">Phone</h2>
+					<input type="tel" name="TelephoneNumber" id="TelephoneNumber" class="hover" placeholder="Telephone" ><br>
+						
+				</div>
+
+				<div id="SubjectSec">
+					<h2 class="name">Subject</h2>
+					<select name="Subject" id="Subject" class="hover" >
+						<option value="Insert">-----Select-----</option>
+						<option value="Football History">Football History</option>
+						<option value="Football Players">Football Players</option>
+						<option value="FIFA World Cup">FIFA World Cup</option>
+						<option value="Football Clubs">Football Clubs</option>
+						<option value="Suggestions">Suggestions</option>
+					</select>		
+				</div>
+				<div id="details">
+					<h2 class="name">Message</h2>
+					<textarea name="Message" id="Message" class="hover" placeholder="Message"></textarea><br>		
+				</div>
+
+				<!---CHECK and RESET button-->
+				<input type="button" class="button querybtn"  name="querybutton" value="CHECK" onclick="getSummary(this.form)">
+				<input type="reset" class="button resetbtn"  name="resetbutton" value="RESET">
+			</div>
+	</div>
+
+	<!---Summery Of The Form-->
+	<div id="summary">
+			<div class="topic">
+				<h1>Summary</h1>
+			</div>
+			<div class="content">
+				<p id="id1"></p>
+				<p id="id2"></p>
+				<p id="id3"></p>
+				<p id="id4"></p>
+				<p id="id5"></p>
+
+				<input type="submit" class="button submitbtn" value="send">
+				<input type="button"  class="button editbtn" name="editbutton" value="Edit" onclick="AppearTheForm()">	</div>
+	</div>
+</form>
+
+	<div class="pageDeveloper"><a href="PageDeveloperSandalu.html">Page Developer</a></div>
+
+		<!---Navigation Bar-->
+		<div class="nav">
+		<ul>
+			<li class="link6"><a href="StudentPage.html">Our Team</a></li>
+			<li class="link5"><a href="AdditionalPage.html">More Info</a></li>
+			<li class="link4"><a href="Query.html">Query</a></li>
+			<li class="link3"><a href="Shop.html">Shop</a></li>	
+			<li class="link2"><a href="Gallery.html">Gallery</a></li>
+			<li class="link7"><a href="SiteMap.html">Site Map</a></li>
+			<li class="link1"><a href="QuizPage.html">Quiz</a></li>	
+			<li class="home"><a href="index.html">Home</a></li>
+		</ul>
+
+		<!---Shade Bar-->
+		<div class="shade">
+			<ul>
+			<li><a href="https://twitter.com"><img src="twitter.png" alt="logo" class="icon"></a>
+			</li>
+			<li><a href="https://www.facebook.com"><img src="facebook.png" alt="logo" class="icon">
+			</a></li>
+			<li><a href="https://www.instagram.com"><img src="insta.png" alt="logo" class="icon"></a>
+			</li>
+			<li><h3>Follow Us : </h3></li>	
+		</ul>
+		</div>
+		<div class="logo"><img src="LogoBlack.jpg" alt="logo">
+		</div>
+	</div>
+
+
+
+</body>
+</html>
